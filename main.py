@@ -19,6 +19,12 @@ def init(desired,max,d,c):
 
 
 def letter(lettre,actuPrint):
+    if lettre not in alphabet:
+        actuPrint = actuPrint + lettre
+        if clear:clearT()
+        print(actuPrint)
+        time.sleep(delay)
+        return actuPrint
     i = 0
     randChar = chr(32)
     while i<lettersMax and randChar != lettre:
@@ -34,7 +40,7 @@ def letter(lettre,actuPrint):
     if clear:clearT()
     actuPrint = actuPrint + lettre
     print(actuPrint)
-    time.sleep(0.001)
+    time.sleep(delay)
     return actuPrint
 
 def clearT():
