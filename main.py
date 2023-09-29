@@ -31,6 +31,7 @@ def letter(lettre,actuPrint):
             time.sleep(delay)
             actuPrint = actuPrint[:-1]
         else: return actuPrint
+    if clear:clearT()
     actuPrint = actuPrint + lettre
     print(actuPrint)
     time.sleep(0.001)
