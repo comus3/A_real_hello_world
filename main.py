@@ -17,6 +17,7 @@ def init(desired,max,d,c):
     alphabet = alphabet+"0123456789"
     desiredString = desired
 
+
 def letter(lettre,actuPrint):
     i = 0
     randChar = chr(32)
@@ -25,12 +26,14 @@ def letter(lettre,actuPrint):
         randChar = alphabet[random.randint(0,len(alphabet)-1)]
         actuPrint = actuPrint + randChar
         if clear:clearT()
-        print(actuPrint)
-        time.sleep(0.001)
-        if randChar!=lettre:actuPrint = actuPrint[:-1]
+        if randChar!=lettre:
+            print(actuPrint)
+            time.sleep(0.001)
+            actuPrint = actuPrint[:-1]
         else: return actuPrint
     actuPrint = actuPrint + lettre
     print(actuPrint)
+    time.sleep(0.001)
     return actuPrint
 
 def clearT():
