@@ -14,6 +14,7 @@ def init(desired,max,d,c):
     delay = d
     lettersMax = max
     alphabet = string.ascii_letters
+    alphabet = alphabet+"0123456789"
     desiredString = desired
 
 def letter(lettre,actuPrint):
@@ -51,7 +52,7 @@ def hackerPrint(string,max,d,clear):
 
 
 if __name__ == '__main__':
-    hackerPrint('Hello World',10,1,True)
+    hackerPrint('Hello World',10,1,False)
     
     
 
