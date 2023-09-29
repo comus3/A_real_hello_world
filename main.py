@@ -28,7 +28,7 @@ def letter(lettre,actuPrint):
         if clear:clearT()
         if randChar!=lettre:
             print(actuPrint)
-            time.sleep(0.001)
+            time.sleep(delay)
             actuPrint = actuPrint[:-1]
         else: return actuPrint
     actuPrint = actuPrint + lettre
@@ -56,4 +56,4 @@ def hackerPrint(string,max,d,clear):
 
 
 if __name__ == '__main__':
-    hackerPrint('Hello World',10,1,True)
+    hackerPrint('Hello World',10,0.01,True)
