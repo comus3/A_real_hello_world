@@ -24,7 +24,9 @@ def letter(lettre,actuPrint):
         i = i + 1
         randChar = alphabet[random.randint(0,len(alphabet)-1)]
         actuPrint = actuPrint + randChar
+        if clear:clearT()
         print(actuPrint)
+        time.sleep(0.001)
         if randChar!=lettre:actuPrint = actuPrint[:-1]
         else: return actuPrint
     actuPrint = actuPrint + lettre
@@ -44,22 +46,11 @@ def hackerPrint(string,max,d,clear):
     init(string,max,d,clear)
     actuPrint = ""
     while actuPrint != desiredString:
-        if clear:clearT()
         lettre = desiredString[len(actuPrint)]
         actuPrint = letter(lettre,actuPrint)
-        time.sleep(1)
+        
         
 
 
 if __name__ == '__main__':
-    hackerPrint('Hello World',10,1,False)
-    
-    
-
-
-
-
-
-
-    
-    
+    hackerPrint('Hello World',10,1,True)
