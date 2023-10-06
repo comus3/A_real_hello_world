@@ -41,9 +41,10 @@ def stringSwiper(actuPrint,dicoString):
                 output = output + actuPrint[index]
             else:
                 output = output + dicoString[index]
+        if longueurActu in dicoString:
+            output = output+dicoString[longueurActu]
         return output
-
-
+    
 def letter(lettre,actuPrint):
     if lettre not in alphabet and not(casinoSystem.isCasino(len(actuPrint))):
         actuPrint = actuPrint + lettre
@@ -51,7 +52,7 @@ def letter(lettre,actuPrint):
         print(actuPrint)
         time.sleep(delay)
         return actuPrint
-    if not(casinoSystem.isCasino(len(actuPrint))):
+    elif not(casinoSystem.isCasino(len(actuPrint))):
         i = 0
         randChar = chr(32)
         while i<lettersMax and randChar != lettre:
@@ -74,8 +75,6 @@ def letter(lettre,actuPrint):
             actuPrint = casinoSystem.activated(actuPrint)
             print(actuPrint)
         if clear:clearT()
-        actuPrint = actuPrint + lettre
-        print(actuPrint)
     time.sleep(delay)
     return actuPrint
 
@@ -107,7 +106,7 @@ class casinosystem():
             return actuPrint
         return stringSwiper(actuPrint,changesDico)
     def casinoStop(self,letterIndex,actuPrint):
-        output = actuPrint[:letterIndex-1]+str(self.casinoDico[letterIndex][0])+actuPrint[letterIndex+1:]
+        output = actuPrint[:letterIndex]+str(self.casinoDico[letterIndex][0])+actuPrint[letterIndex+1:]
         del self.casinoDico[letterIndex]
         return output
 
