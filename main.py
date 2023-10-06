@@ -31,13 +31,17 @@ def stringSwiper(actuPrint,dicoString):
         output = output + actuPrint[len(output):key-1] + dicoString[key][0]
     return output
     """
-    output = ""
-    for index in range(len(actuPrint)):
-        if index not in dicoString:
-            output = output + actuPrint[index]
-        else:
-            output = output + dicoString[index]
-    return output
+    longueurActu = len(actuPrint)
+    if longueurActu == 1:
+        return actuPrint + dicoString[1]
+    else:
+        output = ""
+        for index in range(longueurActu):
+            if index not in dicoString:
+                output = output + actuPrint[index]
+            else:
+                output = output + dicoString[index]
+        return output
 
 
 def letter(lettre,actuPrint):
@@ -51,6 +55,7 @@ def letter(lettre,actuPrint):
         i = 0
         randChar = chr(32)
         while i<lettersMax and randChar != lettre:
+            actuPrint = casinoSystem.activated(actuPrint)
             i = i + 1
             randChar = alphabet[random.randint(0,len(alphabet)-1)]
             actuPrint = actuPrint + randChar
@@ -82,8 +87,7 @@ class casinosystem():
     def isCasino(self,index):
         return index in self.casinoDico
     def activated(self,actuPrint):
-        actuPrint = self.casinoLetters(actuPrint)
-        return actuPrint
+        return self.casinoLetters(actuPrint)
     def casinoNew(self,actuPrint,targetLetter):
         amtLeft = len(desiredString)-len(actuPrint)
         new = random.randint(0,self.amt) == 0 and amtLeft>2
@@ -135,4 +139,4 @@ def hackerPrint(string,max=3,d=0.01,clear=True,casinoAmount=0,casinoDur=1):
 
 
 if __name__ == '__main__':
-    hackerPrint('Hello World',10,0.01,True,100,10)
+    hackerPrint('Hello World',3,0.01,True,100,5)
