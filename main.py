@@ -89,7 +89,7 @@ class casinosystem():
         return self.casinoLetters(actuPrint)
     def casinoNew(self,actuPrint,targetLetter):
         amtLeft = len(desiredString)-len(actuPrint)
-        new = random.randint(0,self.amt) == 0 and amtLeft>2
+        new = random.randint(0,100) > self.amt and amtLeft>2
         if new:
             index = len(actuPrint)
             if index not in self.casinoDico:self.casinoDico[index]=[targetLetter,self.duration]
