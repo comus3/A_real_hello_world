@@ -74,8 +74,8 @@ def letter(lettre,actuPrint):
             if clear:clearT
             actuPrint = casinoSystem.activated(actuPrint)
             print(actuPrint)
+            time.sleep(delay)
         if clear:clearT()
-    time.sleep(delay)
     return actuPrint
 
 class casinosystem():
@@ -133,6 +133,7 @@ def hackerPrint(string,max=3,d=0.01,clear=True,casinoAmount=0,casinoDur=1):
             actuPrint = casinoSystem.activated(actuPrint)
             if clear:clearT
             print(actuPrint)
+            time.sleep(delay)
         
         
 
