@@ -139,4 +139,4 @@ def hackerPrint(string,max=3,d=0.01,clear=True,casinoAmount=0,casinoDur=1):
 
 
 if __name__ == '__main__':
-    hackerPrint('Hello World',3,0.01,True,100,5)
+    hackerPrint('Hello World',3,0.03,False,40,50)
