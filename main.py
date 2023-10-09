@@ -21,16 +21,6 @@ def init(desired,max,d,c,casinoAmount,casinoDur):
     desiredString = desired
 
 def stringSwiper(actuPrint,dicoString):
-    """
-    output = ""
-    first = list(dicoString.keys())[0]
-    output = output + actuPrint[:first-1]+ dicoString[first][0]
-    for key in dicoString:
-        if key == first:
-            continue
-        output = output + actuPrint[len(output):key-1] + dicoString[key][0]
-    return output
-    """
     longueurActu = len(actuPrint)
     if longueurActu == 1:
         return actuPrint + dicoString[1]
