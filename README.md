@@ -43,6 +43,8 @@ To use the script, you'll need to import it into your Python environment and cal
 
 This will execute the Hacker Typer script with the specified parameters, and you'll see the hacker-like typing effect in your command prompt. The script will type out the desired text with random characters and casino letters.
 
+Asking the terminal to clear itself between each iteration is quite laggy so I would suggest you keep this option off and make the terminal 1 line long(by maunaly resizing the window)
+
 Feel free to customize the parameters as needed to achieve the desired typing effect. Enjoy using Hacker Typer to create entertaining terminal-like displays!
 
 ## Parameters
@@ -55,6 +57,7 @@ The `hackerPrint` function takes the following parameters:
 4. `clear_terminal` (bool): Whether to clear the terminal between each iteration (compatible with macOS, Linux, and Windows).
 5. `casino_letters_amount` (int): The percentage of letters that keep going random after the next letter is fixed (0 to 100%).
 6. `casino_duration` (int): How long "casino letters" need to roll before getting fixed.
+7. `output` (string): Either chose from the default outputs I set up or define a custom output function (default is print)
 
 ## Examples
 
@@ -70,4 +73,18 @@ main.hackerPrint('Hack the Planet!', 2, 0.05, False, 50, 3)
 
 Feel free to customize the parameters to achieve the desired typing effect.
 
+You can use this library in your python codes by importing it and creating a custom output function. The program will send every string iteration to the output function. I would recommend using a separate thread for hackerPrint or your code will be interupted until the end of the execution (which is at minimum len(desired_text)*delay*max_chars
+
 Enjoy using Hacker Typer to create entertaining terminal-like displays!
+
+
+________/\\\\\\\\\________/\\\\\________/\\\\____________/\\\\_        
+ _____/\\\////////_______/\\\///\\\_____\/\\\\\\________/\\\\\\_       
+  ___/\\\/______________/\\\/__\///\\\___\/\\\//\\\____/\\\//\\\_      
+   __/\\\_______________/\\\______\//\\\__\/\\\\///\\\/\\\/_\/\\\_     
+    _\/\\\______________\/\\\_______\/\\\__\/\\\__\///\\\/___\/\\\_    
+     _\//\\\_____________\//\\\______/\\\___\/\\\____\///_____\/\\\_   
+      __\///\\\____________\///\\\__/\\\_____\/\\\_____________\/\\\_  
+       ____\////\\\\\\\\\_____\///\\\\\/______\/\\\_____________\/\\\_ 
+        _______\/////////________\/////________\///______________\///__
+
