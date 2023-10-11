@@ -5,13 +5,14 @@ import copy
 from os import system, name
 
 
-def init(desired,max,d,c,casinoAmount,casinoDur):
+def init(desired,max,d,c,casinoAmount,casinoDur,outputType = "Terminal"):
     global delay
     global alphabet
     global desiredString
     global lettersMax
     global clear
     global casinoSystem
+    global output
     casinoSystem = casinosystem(casinoDur,100-casinoAmount)
     clear = c
     delay = d
@@ -19,6 +20,17 @@ def init(desired,max,d,c,casinoAmount,casinoDur):
     alphabet = string.ascii_letters
     alphabet = alphabet+"0123456789"
     desiredString = desired
+    if outputType == "Terminal":
+        def output(string):
+            print(string)
+    elif outputType == "Interface":
+        outputList = []
+        def output(string):
+            outputList.append(string)
+    else:
+        def output(string):
+            print(string)
+
 
 def stringSwiper(actuPrint,dicoString):
     longueurActu = len(actuPrint)
@@ -39,7 +51,7 @@ def letter(lettre,actuPrint):
     if lettre not in alphabet and not(casinoSystem.isCasino(len(actuPrint))):
         actuPrint = actuPrint + lettre
         if clear:clearT()
-        print(actuPrint)
+        output(actuPrint)
         time.sleep(delay)
         return actuPrint
     elif not(casinoSystem.isCasino(len(actuPrint))):
@@ -52,18 +64,18 @@ def letter(lettre,actuPrint):
             actuPrint = actuPrint + randChar
             if clear:clearT()
             if randChar!=lettre:
-                print(actuPrint)
+                output(actuPrint)
                 time.sleep(delay)
                 actuPrint = actuPrint[:-1]
             else: return actuPrint
         if clear:clearT()
         actuPrint = actuPrint + lettre
-        print(actuPrint)
+        output(actuPrint)
     else:
         for _ in range(lettersMax):
             if clear:clearT
             actuPrint = casinoSystem.activated(actuPrint)
-            print(actuPrint)
+            output(actuPrint)
             time.sleep(delay)
         if clear:clearT()
     return actuPrint
@@ -122,10 +134,10 @@ def hackerPrint(string,max=3,d=0.01,clear=True,casinoAmount=0,casinoDur=1):
         else:
             actuPrint = casinoSystem.activated(actuPrint)
             if clear:clearT
-            print(actuPrint)
+            output(actuPrint)
             time.sleep(delay)
         
-        
+ 
 
 
 if __name__ == '__main__':
