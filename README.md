@@ -81,9 +81,13 @@ Enjoy using Hacker Typer to create entertaining terminal-like displays!
 
 
    ___  ___   __  __ 
+   
   / __|/ _ \ |  \/  |
+  
  | (__| (_) || |\/| |
+ 
   \___|\___/ |_|  |_|
+  
                      
 
 
