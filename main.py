@@ -121,7 +121,7 @@ def clearT():
         _ = system('clear')
     
 
-def hackerPrint(string,max=3,d=0.01,clear=True,casinoAmount=0,casinoDur=1):
+def hackerPrint(string,max=3,d=0.018,clear=False,casinoAmount=30,casinoDur=35):
     init(string,max,d,clear,casinoAmount,casinoDur)
     actuPrint = ""
     while actuPrint != desiredString:
