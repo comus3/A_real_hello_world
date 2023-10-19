@@ -68,7 +68,7 @@ Here are some example usages of the `hackerPrint` function:
 main.hackerPrint('Hello World')
 
 # With custom parameters
-main.hackerPrint('Hack the Planet!', 2, 0.05, False, 50, 3)
+main.hackerPrint('Hack the Planet!', 2, 0.05, False, 30, 30)
 ```
 
 Feel free to customize the parameters to achieve the desired typing effect.
